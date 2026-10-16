@@ -1,0 +1,17 @@
+{
+  "name": "932403.nasrutdinov.ruslan.lab6",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №6, вариант 13: API таймера и PWA на Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

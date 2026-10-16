@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173f5f" />
+    <meta
+      name="description"
+      content="Серверный таймер обратного отсчёта — лабораторная работа №6."
+    />
+    <title>Серверный таймер</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Перейти к таймеру</a>
+    <header>
+      <nav class="container" aria-label="Основная навигация">
+        <a class="brand" href="/">Timepoint</a>
+        <a href="/about">О проекте</a>
+        <span id="network-status" class="network-status">Проверка сети…</span>
+      </nav>
+    </header>
+
+    <main id="content" class="container">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Лабораторная работа №6 · вариант 13</p>
+        <h1 id="page-title">Таймер с серверной меткой</h1>
+        <p>
+          Сервер фиксирует точное время запуска и рассчитывает момент завершения.
+        </p>
+      </section>
+
+      <section class="timer-card" aria-labelledby="timer-title">
+        <div class="timer-form-wrap">
+          <p class="eyebrow eyebrow--dark">Новый отсчёт</p>
+          <h2 id="timer-title">Сколько секунд отсчитать?</h2>
+          <form id="timer-form">
+            <label for="seconds">Длительность, секунд</label>
+            <div class="input-row">
+              <input id="seconds" name="seconds" type="number" min="0.1" step="0.1" value="60" required />
+              <button type="submit">Запустить</button>
+            </div>
+          </form>
+          <p id="message" class="message" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="countdown" aria-live="polite">
+          <span>Осталось</span>
+          <strong id="countdown-value">00:00</strong>
+          <div class="progress" aria-hidden="true">
+            <span id="progress-bar"></span>
+          </div>
+          <dl>
+            <div><dt>Старт</dt><dd id="start-time">—</dd></div>
+            <div><dt>Финиш</dt><dd id="end-time">—</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="features" aria-label="Возможности приложения">
+        <article><span aria-hidden="true">⌛</span><h2>Точный расчёт</h2><p>Метки времени формируются на сервере Node.js.</p></article>
+        <article><span aria-hidden="true">📡</span><h2>JSON API</h2><p>Маршрут <code>/api/timer?seconds=60</code> валидирует запрос.</p></article>
+        <article><span aria-hidden="true">📱</span><h2>PWA</h2><p>Статика кешируется и доступна без сети после первого визита.</p></article>
+      </section>
+    </main>
+
+    <footer><p>Руслан Насрутдинов · группа 932403</p></footer>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "Timepoint — серверный таймер",
+  "short_name": "Timepoint",
+  "description": "Таймер обратного отсчёта с серверной меткой времени",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#173f5f",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
