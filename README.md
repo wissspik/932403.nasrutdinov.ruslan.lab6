@@ -28,6 +28,36 @@ npm start
 
 Откройте `http://localhost:3000`.
 
+## Cloudflare Tunnel
+
+Текущий временный публичный адрес:
+
+**https://voltage-phrase-condos-hottest.trycloudflare.com**
+
+Quick Tunnel работает, пока запущены локальный Node.js-сервер и процесс `cloudflared`.
+При новом запуске Cloudflare выдаёт другой адрес `trycloudflare.com`.
+
+Перед запуском установите `cloudflared` и убедитесь, что команда доступна в `PATH`.
+
+PowerShell:
+
+```powershell
+npm run tunnel
+```
+
+Git Bash:
+
+```bash
+bash scripts/start-cloudflare-tunnel.sh
+```
+
+Оба скрипта автоматически:
+
+1. запускают приложение на порту `3006`;
+2. проверяют локальный маршрут `/api/status`;
+3. создают Cloudflare Quick Tunnel;
+4. останавливают Node.js-сервер при завершении туннеля.
+
 ## Проверка
 
 ```bash
